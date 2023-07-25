@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chaperone | Login</title>
+    <style>
+      @font-face {
+        font-family: ysabeau;
+        src: url("/fonts/ysabeau/static/YsabeauOffice-Regular.ttf");
+      }
+
+      h1 {
+        font-family: "ysabeau";
+      }
+
+      body {
+        min-height: 100vh;
+        max-width: 1200px;
+        width: 80%;
+        margin: 10px auto;
+      }
+
+      form > div {
+        display: flex;
+        flex-direction: column;
+        margin: 10px 0;
+        position: relative;
+      }
+
+      form > div input {
+        padding: 10px;
+        outline: none;
+      }
+
+      form button {
+        cursor: pointer;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 5px;
+      }
+
+      form a {
+        position: absolute;
+        left: 52%;
+        text-decoration: none;
+        background-color: grey;
+        padding: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Login Here</h1>
+    <% if (messages.error) { %>
+     <%= messages.error %>
+    <% } %>
+    <form action="/login" method="post">
+      <div>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required />
+      </div>
+      <div>
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required />
+      </div>
+      <button type="submit">Login</button>
+    </form>
+  </body>
+</html>
